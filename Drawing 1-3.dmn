@@ -90,11 +90,11 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="844" y="200" width="200" height="200"/>
+        <dc:Bounds x="213" y="275" width="200" height="200"/>
         <dmndi:DMNLabel/>
         <dmndi:DMNDecisionServiceDividerLine>
-          <di:waypoint x="844" y="300"/>
-          <di:waypoint x="1044" y="300"/>
+          <di:waypoint x="213" y="375"/>
+          <di:waypoint x="413" y="375"/>
         </dmndi:DMNDecisionServiceDividerLine>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_c61f2bf3-b428-487b-98f9-cae1fd92fda4" dmnElementRef="_c61f2bf3-b428-487b-98f9-cae1fd92fda4" isCollapsed="false">
