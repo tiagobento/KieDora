@@ -1,1 +1,31 @@
-
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_D714CBB7-A5A3-4EAB-A41A-85C114967E6A" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" id="_F41E0687-B1C5-497F-AAEE-2625DA3FEEC5" name="sdfsfsdf" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_D714CBB7-A5A3-4EAB-A41A-85C114967E6A">
+  <dmn:extensionElements/>
+  <dmn:businessKnowledgeModel id="_2C90CC05-066F-4609-B088-3A593CBFAE01" name="BusinessKnowledgeModel-1">
+    <dmn:extensionElements/>
+    <dmn:variable id="_745D3348-C833-4F67-B1CE-AD0C25EC3F82" name="BusinessKnowledgeModel-1"/>
+    <dmn:encapsulatedLogic id="_C001BF7E-2EC6-4941-8A03-EA7FF73669F8" kind="FEEL">
+      <dmn:literalExpression id="_7C6B937F-6E9E-4634-95B3-5D65B906037D">
+        <dmn:text/>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_7C6B937F-6E9E-4634-95B3-5D65B906037D"/>
+          <kie:ComponentWidths dmnElementRef="_C001BF7E-2EC6-4941-8A03-EA7FF73669F8"/>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_2C90CC05-066F-4609-B088-3A593CBFAE01" dmnElementRef="_2C90CC05-066F-4609-B088-3A593CBFAE01" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="136" y="67" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
