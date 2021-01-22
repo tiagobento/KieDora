@@ -1,4 +1,4 @@
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_AB9FB115-1822-43FC-9FFA-C4389A13E85A" exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_iPngUD7ZEDm0TaY4SaQuFA" exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_personItem" structureRef="org.acme.kogito.model.Person"/>
   <bpmn2:itemDefinition id="_UserTask_1_SkippableInputXItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="_UserTask_1_PriorityInputXItem" structureRef="Object"/>
@@ -23,16 +23,16 @@
     <bpmn2:sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="BusinessRuleTask_1"/>
     <bpmn2:sequenceFlow id="SequenceFlow_2" sourceRef="BusinessRuleTask_1" targetRef="ExclusiveGateway_1"/>
     <bpmn2:sequenceFlow id="SequenceFlow_3" sourceRef="ExclusiveGateway_1" targetRef="UserTask_1">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_BrswgN75EDe9dbjDWJBPuQ" language="http://www.java.com/java">return person.isAdult() == false;</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return person.isAdult() == false;]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:sequenceFlow id="SequenceFlow_4" sourceRef="UserTask_1" targetRef="EndEvent_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_4" sourceRef="UserTask_1" targetRef="EndEvent_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_5" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_2">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_BrtXkN75EDe9dbjDWJBPuQ" language="http://www.java.com/java">return person.isAdult() == true;</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return person.isAdult() == true;]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:startEvent id="StartEvent_1" name="StartProcess">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue>StartProcess</drools:metaValue>
+          <drools:metaValue><![CDATA[StartProcess]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
@@ -40,26 +40,26 @@
     <bpmn2:businessRuleTask id="BusinessRuleTask_1" drools:ruleFlowGroup="person" name="Evaluate person" implementation="http://www.jboss.org/drools/rule">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue>Evaluate person</drools:metaValue>
+          <drools:metaValue><![CDATA[Evaluate person]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_Brt-oN75EDe9dbjDWJBPuQ">
+      <bpmn2:ioSpecification>
         <bpmn2:dataInput id="BusinessRuleTask_1_personInputX" drools:dtype="org.acme.kogito.model.Person" itemSubjectRef="_BusinessRuleTask_1_personInputXItem" name="person"/>
         <bpmn2:dataOutput id="BusinessRuleTask_1_personOutputX" drools:dtype="org.acme.kogito.model.Person" itemSubjectRef="_BusinessRuleTask_1_personOutputXItem" name="person"/>
-        <bpmn2:inputSet id="_BrulsN75EDe9dbjDWJBPuQ">
+        <bpmn2:inputSet>
           <bpmn2:dataInputRefs>BusinessRuleTask_1_personInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_Brulsd75EDe9dbjDWJBPuQ">
+        <bpmn2:outputSet>
           <bpmn2:dataOutputRefs>BusinessRuleTask_1_personOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_Brulst75EDe9dbjDWJBPuQ">
+      <bpmn2:dataInputAssociation>
         <bpmn2:sourceRef>person</bpmn2:sourceRef>
         <bpmn2:targetRef>BusinessRuleTask_1_personInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_Bruls975EDe9dbjDWJBPuQ">
+      <bpmn2:dataOutputAssociation>
         <bpmn2:sourceRef>BusinessRuleTask_1_personOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>person</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
@@ -67,7 +67,7 @@
     <bpmn2:exclusiveGateway id="ExclusiveGateway_1" name="Exclusive Gateway 1" gatewayDirection="Diverging">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue>Exclusive Gateway 1</drools:metaValue>
+          <drools:metaValue><![CDATA[Exclusive Gateway 1]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
@@ -77,64 +77,64 @@
     <bpmn2:userTask id="UserTask_1" name="Special handling for children">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue>Special handling for children</drools:metaValue>
+          <drools:metaValue><![CDATA[Special handling for children]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_4</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_BrvMwN75EDe9dbjDWJBPuQ">
+      <bpmn2:ioSpecification>
         <bpmn2:dataInput id="UserTask_1_TaskNameInputX" drools:dtype="Object" itemSubjectRef="_UserTask_1_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="UserTask_1_personInputX" drools:dtype="org.acme.kogito.model.Person" itemSubjectRef="_UserTask_1_personInputXItem" name="person"/>
         <bpmn2:dataInput id="UserTask_1_SkippableInputX" drools:dtype="Object" itemSubjectRef="_UserTask_1_SkippableInputXItem" name="Skippable"/>
         <bpmn2:dataInput id="UserTask_1_PriorityInputX" drools:dtype="Object" itemSubjectRef="_UserTask_1_PriorityInputXItem" name="Priority"/>
-        <bpmn2:inputSet id="_Brvz0N75EDe9dbjDWJBPuQ">
+        <bpmn2:inputSet>
           <bpmn2:dataInputRefs>UserTask_1_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>UserTask_1_personInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>UserTask_1_SkippableInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>UserTask_1_PriorityInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_Brvz0d75EDe9dbjDWJBPuQ">
+      <bpmn2:dataInputAssociation>
         <bpmn2:targetRef>UserTask_1_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_Brvz0t75EDe9dbjDWJBPuQ">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_Brwa4N75EDe9dbjDWJBPuQ">ChildrenHandling</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_BrxB8N75EDe9dbjDWJBPuQ">UserTask_1_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[ChildrenHandling]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[UserTask_1_TaskNameInputX]]></bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_BrxB8d75EDe9dbjDWJBPuQ">
+      <bpmn2:dataInputAssociation>
         <bpmn2:sourceRef>person</bpmn2:sourceRef>
         <bpmn2:targetRef>UserTask_1_personInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_BrxB8t75EDe9dbjDWJBPuQ">
+      <bpmn2:dataInputAssociation>
         <bpmn2:targetRef>UserTask_1_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_BrxB8975EDe9dbjDWJBPuQ">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_BrxB9N75EDe9dbjDWJBPuQ">true</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_BrxpAN75EDe9dbjDWJBPuQ">UserTask_1_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[true]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[UserTask_1_SkippableInputX]]></bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_BrxpAd75EDe9dbjDWJBPuQ">
+      <bpmn2:dataInputAssociation>
         <bpmn2:targetRef>UserTask_1_PriorityInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_BrxpAt75EDe9dbjDWJBPuQ">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_BrxpA975EDe9dbjDWJBPuQ">1</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_BrxpBN75EDe9dbjDWJBPuQ">UserTask_1_PriorityInputX</bpmn2:to>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[1]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[UserTask_1_PriorityInputX]]></bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:userTask>
     <bpmn2:endEvent id="EndEvent_1" name="End Event 1">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue>End Event 1</drools:metaValue>
+          <drools:metaValue><![CDATA[End Event 1]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:endEvent id="EndEvent_2" name="End Event 2">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue>End Event 2</drools:metaValue>
+          <drools:metaValue><![CDATA[End Event 2]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
     </bpmn2:endEvent>
   </bpmn2:process>
   <bpmndi:BPMNDiagram>
@@ -162,10 +162,10 @@
         <di:waypoint x="390" y="230"/>
         <di:waypoint x="622" y="230"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="edge_shape_UserTask_1_to_shape_EndEvent_1" bpmnElement="SequenceFlow_4">
+      <bpmndi:BPMNEdge id="edge_shape_UserTask_1_to_shape_EndEvent_2" bpmnElement="SequenceFlow_4">
         <di:waypoint x="575" y="130"/>
         <di:waypoint x="598" y="130"/>
-        <di:waypoint x="622" y="130"/>
+        <di:waypoint x="650" y="240"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape_ExclusiveGateway_1_to_shape_UserTask_1" bpmnElement="SequenceFlow_3">
         <di:waypoint x="415" y="128"/>
@@ -185,7 +185,7 @@
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_BrzeMN75EDe9dbjDWJBPuQ" type="BPSimData">
+  <bpmn2:relationship type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario id="default" name="Simulationscenario">
@@ -240,7 +240,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_AB9FB115-1822-43FC-9FFA-C4389A13E85A</bpmn2:source>
-    <bpmn2:target>_AB9FB115-1822-43FC-9FFA-C4389A13E85A</bpmn2:target>
+    <bpmn2:source>_iPngUD7ZEDm0TaY4SaQuFA</bpmn2:source>
+    <bpmn2:target>_iPngUD7ZEDm0TaY4SaQuFA</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
